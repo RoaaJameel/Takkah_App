@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656876491679",
+    "project_id": "takkeh-94892",
+    "storage_bucket": "takkeh-94892.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656876491679:android:8d4a70d9ae58b4455b63aa",
+        "android_client_info": {
+          "package_name": "com.example.takkeh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC56dE0r_fJw4suU_aBWnmRqUW7JW7pf_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
