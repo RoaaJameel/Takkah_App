@@ -1,11 +1,13 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:firebase_core/firebase_core.dart';
 import './config/app_config.dart';
-import './config/app_routes.dart';
 import './config/app_theme.dart';
 import './services/firebase_service.dart';
 import './services/supabase_service.dart';
 import './views/splash_view.dart';
+import './views/login_view.dart';
+import './views/signup_view.dart';
 
 void main() async {
   // 1. تأكد من الـ binding
@@ -47,7 +49,7 @@ class TakkehApp extends StatelessWidget {
       home: const SplashView(),
       routes: {
         '/login': (_) => const LoginView(),
-'/signupscreen': (context) => const SignUpView(),
+        '/signupscreen': (context) => const SignUpView(),
         '/check': (_) => const FirebaseCheckPage(),
       },
     );
@@ -102,7 +104,7 @@ class FirebaseCheckPage extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SignUpView())
+                  MaterialPageRoute(builder: (context) => const SignUpView()),
                 );
               },
               child: const Text('Open Sign Up Page'),

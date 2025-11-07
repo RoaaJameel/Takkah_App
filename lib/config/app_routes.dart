@@ -13,7 +13,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> getRoutes() {
     return {
       login: (_) => const LoginView(),
-      signupScreen: (_) => const SignUpScreen(),
+      signupScreen: (_) => const SignUpView(),
       check: (_) => const FirebaseCheckPage(),
     };
   }
