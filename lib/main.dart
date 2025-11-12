@@ -9,26 +9,20 @@ import './views/splash_view.dart';
 import './views/login_view.dart';
 import './views/signup_view.dart';
 
-Future<void> main() async {
-  // 1️⃣ تأكد من الـ binding
+void main() async {
+  // 1. تأكد من الـ binding
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 2️⃣ حمّل ملف .env (بس رح يشتغل لما يكون الملف فعليًا موجود محلي)
-  try {
-    await dotenv.load(fileName: '.env');
-  } catch (e) {
-    debugPrint(
-      '⚠️ Warning: .env file not found or not loaded. Using Codemagic env vars if available.',
-    );
-  }
+  // 2. تحميل ملف .env
+  await dotenv.load(fileName: '.env');
 
-  // 3️⃣ تحميل الإعدادات من environment
+  // 3. تهيئة التكوين
   AppConfig.loadFromEnv();
 
-  // 4️⃣ تهيئة Firebase
+  // 4. تهيئة Firebase
   await FirebaseService.initialize();
 
-  // 5️⃣ تهيئة Supabase (بعد Firebase)
+  // 5. تهيئة Supabase (بعد Firebase)
   await SupabaseService.initialize();
 
   runApp(const MyApp());
@@ -80,8 +74,8 @@ class FirebaseCheckPage extends StatelessWidget {
           children: [
             Text(
               _firebaseAvailable
-                  ? '✅ Firebase Connected!'
-                  : '❌ Firebase NOT initialized',
+                  ? 'Firebase Connected!'
+                  : 'Firebase NOT initialized',
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
